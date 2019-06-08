@@ -2,10 +2,10 @@
 常用工具 ，有空就更，欢迎指导
 
 #### http.js 
-//npm install axios
+npm install axios
 ```bash
 //react demo
-import http from 'https'
+import http from '下载https.js之后放的路径/https'
 class Usedemo extends Component{
   constructor(props){
     super(props)

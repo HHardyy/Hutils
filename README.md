@@ -26,3 +26,9 @@ class Usedemo extends Component{
   }
   export default Usedemo
 ```
+
+
+
+
+# setupProxy.js
+re16的代理

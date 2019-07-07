@@ -32,3 +32,6 @@ class Usedemo extends Component{
 
 # setupProxy.js
 re16的代理
+
+# redHeart.js
+cp+cv，页面点击有随机颜色的红心

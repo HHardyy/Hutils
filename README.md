@@ -47,3 +47,12 @@ if(deviceInfo.match(reg)){   //iphone
       id=window.location.href.split("/detail/")[1].split(':')[1];
 }
 ```
+### font-smoothing
+这个属性可以使页面上的字体抗锯齿,使用后字体看起来会更清晰舒服
+```bash
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+```
+

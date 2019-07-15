@@ -1,7 +1,7 @@
 # Hutils
 常用工具 ，有空就更，欢迎指导
 
-#### http.js 
+### http.js 
 npm install axios
 ```bash
 //react demo
@@ -30,13 +30,13 @@ class Usedemo extends Component{
 
 
 
-# setupProxy.js
+### setupProxy.js
 re16的代理
 
-# redHeart.js
+### redHeart.js
 cp+cv，页面点击有随机颜色的红心
 
-# react 安卓&苹果兼容微信浏览器详情页传参
+### react 安卓&苹果兼容微信浏览器详情页传参
 ```bash
 let deviceInfo=navigator.platform
 let id=''

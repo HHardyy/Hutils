@@ -1,5 +1,5 @@
 # Hutils
-常用工具 ，有空就更，欢迎指导
+没事记录的一些随笔。
 
 ### http.js 
 npm install axios

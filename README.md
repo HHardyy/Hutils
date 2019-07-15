@@ -35,3 +35,13 @@ re16的代理
 
 # redHeart.js
 cp+cv，页面点击有随机颜色的红心
+
+# react 安卓&苹果兼容微信浏览器详情页传参
+let deviceInfo=navigator.platform
+let id=''
+const reg = RegExp(/iPhone/);
+if(deviceInfo.match(reg)){   //iphone
+      id=window.location.href.split("/detail/")[1].replace(/[^0-9]/ig,"");
+}else{                       //Android
+      id=window.location.href.split("/detail/")[1].split(':')[1];
+}

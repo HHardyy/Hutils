@@ -37,6 +37,7 @@ re16的代理
 cp+cv，页面点击有随机颜色的红心
 
 # react 安卓&苹果兼容微信浏览器详情页传参
+```bash
 let deviceInfo=navigator.platform
 let id=''
 const reg = RegExp(/iPhone/);
@@ -45,3 +46,4 @@ if(deviceInfo.match(reg)){   //iphone
 }else{                       //Android
       id=window.location.href.split("/detail/")[1].split(':')[1];
 }
+```

@@ -11,28 +11,24 @@ let http = {
   baseUrl,
   _api
 }
-
-
-http.post = function (api, params) {
-  let _params = params ? qs.stringify(params) : ''
-  return new Promise((resolve, reject) => {
-    axios.post(`${baseUrl}${api ? '/' + api : ''}`, _params).then(res => {
+http.post=function(api,data){
+  let params=qs.stringify(data)
+  return new Promise((resolve,reject)=>{
+    axios.post(`${baseUrl}/Like/${api}`,params).then(res=>{
       resolve(res)
-    }).catch(res => {
+    }).catch(res=>{
       reject(res)
     })
   })
 }
-
-http.get = function (api, params) {
-  let _params = params ? qs.stringify(params) : ''
-  return new Promise((resolve, reject) => {
-    axios.get(`${baseUrl}${api ? '/' + api : ''}`, _params).then(res => {
+http.get=function(api,data){
+  let params=qs.stringify(data)
+  return new Promise((resolve,reject)=>{
+    axios.get(`${baseUrl}/Like/${api}`,params).then(res=>{
       resolve(res)
-    }).catch(res => {
+    }).catch(res=>{
       reject(res)
     })
   })
 }
-
 export default http

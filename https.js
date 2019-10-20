@@ -11,22 +11,24 @@ let http = {
   baseUrl,
   _api
 }
-http.post=function(api,data){
-  let params=qs.stringify(data)
-  return new Promise((resolve,reject)=>{
-    axios.post(`${baseUrl}/Like/${api}`,params).then(res=>{
+http.post = function (api, params) {
+  return new Promise((resolve, reject) => {
+    axios.post(api, qs.stringify(params)).then(res => {
       resolve(res)
-    }).catch(res=>{
+    }).catch(res => {
+      console.log('post走了catch' + res)
       reject(res)
     })
   })
 }
-http.get=function(api,data){
-  let params=qs.stringify(data)
-  return new Promise((resolve,reject)=>{
-    axios.get(`${baseUrl}/Like/${api}`,params).then(res=>{
+http.get = function (api, params) {
+  return new Promise((resolve, reject) => {
+    axios.get(api, {
+      params
+    }).then(res => {
       resolve(res)
-    }).catch(res=>{
+    }).catch(res => {
+      console.log('get走了catch')
       reject(res)
     })
   })

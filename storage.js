@@ -24,7 +24,7 @@ const Storage = {
     localGet: function (name) {
         return JSON.parse(localStorage.getItem(name))
     },
-    //清除缓存
+    //清除local
     localRemove: function (name) {
         localStorage.removeItem(name)
     }

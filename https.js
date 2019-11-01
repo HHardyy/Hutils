@@ -1,15 +1,18 @@
 import axios from 'axios'
-import qs from 'qs'
-http.post = function (api, params) {
+
+let $http={get:'',post:''}
+
+$http.post = function (api, params) {
   return new Promise((resolve, reject) => {
-    axios.post(api, qs.stringify(params)).then(res => {
+    axios.post(api, params).then(res => {
       resolve(res)
     }).catch(res => {
       reject(res)
     })
   })
 }
-http.get = function (api, params) {
+
+$http.get = function (api, params) {
   return new Promise((resolve, reject) => {
     axios.get(api, {
       params
@@ -20,4 +23,4 @@ http.get = function (api, params) {
     })
   })
 }
-export default http
+export default $http

@@ -15,7 +15,7 @@ axios.interceptors.request.use(function (config) {
   if(localStorage.getItem('token name')){
     let token = _sto._getLocal('token name')
     if(typeof token == 'object'&&token!=null){
-      config.headers.Authorization = `Bearer ${token}`
+      config.headers.Authorization = `${token.acessToken}`
     }
   }
   return config;

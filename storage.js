@@ -1,33 +1,34 @@
 /*
-* 缓存处理
+*  hardy 2019-10 30
+*  缓存
 */
-const Storage = {
-    //设置session
-    sessionSet: function (name, data) {
-        sessionStorage.removeItem(name, data)
-        sessionStorage.setItem(name, JSON.stringify(data))
-    },
-    //获取session
-    sessionGet: function (name, data) {
-        return JSON.parse(sessionStorage.getItem(name))
-    },
-    //清楚session
-    sessionRemove: function (name) {
-        sessionStorage.removeItem(name)
-    },
-    //设置local
-    localSet: function (name, data) {
-        localStorage.removeItem(name, data)
-        localStorage.setItem(name, JSON.stringify(data))
-    },
-    //获取local
-    localGet: function (name) {
-        return JSON.parse(localStorage.getItem(name))
-    },
-    //清除local
-    localRemove: function (name) {
-        localStorage.removeItem(name)
+class Storage {
+    constructor() {
+        this._sessionStorage = window.sessionStorage
+        this._localStorage = window.localStorage
+    }
+    _getSession(name) {
+        return JSON.parse(this._sessionStorage.getItem(name))
+    }
+    _setSession(name, payload) {
+        this._sessionStorage.removeItem(name.payload)
+        this._sessionStorage.setItem(name, JSON.stringify(payload))
+    }
+    _rmSession(name) {
+        this._sessionStorage.removeItem(name)
+    }
+    _getLocal(name) {
+        return JSON.parse(this._localStorage.getItem(name))
+    }
+    _setLocal(name, payload) {
+        this._localStorage.removeItem(name, payload)
+        this._localStorage.setItem(name, JSON.stringify(payload))
+    }
+    _rmLocal(name) {
+        this._localStorage.removeItem(name)
     }
 }
 
-export default Storage
+let _sto = new Storage()
+
+export default _sto

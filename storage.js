@@ -1,5 +1,5 @@
 /*
-*  hardy 2019-10 30
+*  hardy 
 *  缓存
 */
 class Storage {

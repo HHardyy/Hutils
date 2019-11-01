@@ -12,9 +12,11 @@ axios.interceptors.request.use(function (config) {
   config.headers.post['Content-Type'] = 'application/json'
   config.headers.put['Content-Type'] = 'application/json'
 
-  let token = _sto._getLocal('token name')
-  if(typeof token == 'object'&&token!=null){
-    config.headers.Authorization = `${token}`
+  if(localStorage.getItem('token name')){
+    let token = _sto._getLocal('token name')
+    if(typeof token == 'object'&&token!=null){
+      config.headers.Authorization = `Bearer ${token}`
+    }
   }
   return config;
 }, function (error) {
@@ -29,6 +31,7 @@ axios.interceptors.response.use(function (config) {
   if(err.response){
     switch (err.response.status) {
       case 401:
+        // token过期
         router.replace({
           path:'/'
         })

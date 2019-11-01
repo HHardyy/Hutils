@@ -1,3 +1,8 @@
+
+/*
+*  hardy
+*  拦截器
+*/
 import axios from 'axios'
 import _sto from './storage'
 import {router} from '../main'
@@ -24,7 +29,6 @@ axios.interceptors.response.use(function (config) {
   if(err.response){
     switch (err.response.status) {
       case 401:
-        // token过期
         router.replace({
           path:'/'
         })

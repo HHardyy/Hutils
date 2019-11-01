@@ -1,3 +1,8 @@
+/*
+*  hardy
+*  request
+*/
+
 import axios from 'axios'
 
 let $http={get:'',post:''}
